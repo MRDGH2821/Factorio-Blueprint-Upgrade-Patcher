@@ -49,11 +49,11 @@ export default component$(() => {
 
   return (
     <div>
-      <h1>Welcome to Factorio Blueprint Upgrade Planner!</h1>
+      <h1>Welcome to Factorio Blueprint Upgrade Patcher!</h1>
       Use this site to quickly replace entities of one type to another with ease!
       <p>
         By default, this site uses{' '}
-        <a href="https://github.com/MRDGH2821/Factorio-Blueprint-Upgrade-Planner/blob/main/public/default-config.json">
+        <a href="https://github.com/MRDGH2821/Factorio-Blueprint-Upgrade-Patcher/blob/main/public/default-config.json">
           a minimal config
         </a>{' '}
         which converts belts, pipes & assemblers into Space versions from Space Exploration mod.
