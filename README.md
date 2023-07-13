@@ -1,6 +1,6 @@
 # Factorio Blueprint Upgrade Patcher
 
-Plan your upgrades in config, Patch your blueprint by uploading in [site](https://factorio-blueprint-upgrade-planner.pages.dev/), Profit!
+Plan your upgrades in config, Patch your blueprint by uploading in [site](https://factorio-blueprint-upgrade-patcher.pages.dev/), Profit!
 
 Made using [Qwik](https://qwik.builder.io/), deployed on [Cloudflare Pages](https://pages.cloudflare.com/)
 
