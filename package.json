@@ -1,6 +1,7 @@
 {
-  "name": "my-qwik-basic-starter",
-  "description": "Demo App with Routing built-in (recommended)",
+  "name": "factorio-blueprint-upgrade-patcher",
+  "description": "Plan your upgrades in config, Patch your blueprint by uploading in site, Profit!",
+  "version": "0.2.0",
   "engines": {
     "node": ">=15.0.0"
   },
