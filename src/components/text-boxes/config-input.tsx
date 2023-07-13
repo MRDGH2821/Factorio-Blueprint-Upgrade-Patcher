@@ -19,7 +19,7 @@ export default component$((props: CFGprop) => {
   return (
     <>
       <span>Input Upgrade Configuration</span>
-      <br></br>
+      <br />
       <textarea
         cols={50}
         rows={10}
@@ -27,11 +27,8 @@ export default component$((props: CFGprop) => {
         placeholder={JSON.stringify(defaultConfig, null, 2)}
         onInput$={(input) => {
           const inputConfig = (input.target as HTMLTextAreaElement).value;
-          if (inputConfig.length < 1) {
-            cfgStore.config = JSON.stringify(defaultConfig, null, 2);
-          } else {
-            cfgStore.config = inputConfig;
-          }
+          cfgStore.config =
+            inputConfig.length < 1 ? JSON.stringify(defaultConfig, null, 2) : inputConfig;
         }}
       />
       <br />

@@ -44,7 +44,7 @@ export default component$(() => {
   });
 
   const cfgStore = useStore<ConfigInputStore>({
-    config: `${JSON.stringify(defaultConfig) || ''}`,
+    config: JSON.stringify(defaultConfig) || '',
   });
 
   return (
@@ -63,7 +63,7 @@ export default component$(() => {
       <BlueprintInput bpStrStore={bpStrStore} />
       <ConfigInput cfgStore={cfgStore} />
       <DownloadButton BPstore={bpStrStore} CFGstore={cfgStore} />
-      <br></br>
+      <br />
       <h2>Config format</h2>
       <p>The configuration should be in JSON format.</p>
       <table class="commands">
