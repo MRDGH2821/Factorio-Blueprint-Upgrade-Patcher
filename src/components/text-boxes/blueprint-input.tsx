@@ -44,7 +44,7 @@ export default component$((props: BPprops) => {
   return (
     <>
       <span>Input factorio Blueprint</span>
-      <br></br>
+      <br />
       <textarea
         cols={50}
         rows={10}

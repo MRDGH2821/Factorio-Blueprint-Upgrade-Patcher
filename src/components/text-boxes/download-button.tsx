@@ -53,8 +53,7 @@ export function replaceEntities(config: BluePrintConfig, blueprint: string) {
 
 export function bpCompress(blueprint: string) {
   const bpDeflateStrArr = deflate(blueprint, { level: 9 });
-  const bpBase64Str = bytesToBase64(bpDeflateStrArr);
-  return bpBase64Str;
+  return bytesToBase64(bpDeflateStrArr);
 }
 
 export function BlueprintConverter(cfgCtx: ConfigInputStore, bpCtx: BlueprintInputStore) {
