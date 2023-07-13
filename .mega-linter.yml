@@ -30,3 +30,6 @@ CLEAR_REPORT_FOLDER: true
 
 REPOSITORY_DEVSKIM_ARGUMENTS:
   - '--skip-git-ignored-files'
+
+REPOSITORY_TRIVY_ARGUMENTS:
+  - '--skip-dirs "**/@builder.io/qwik/starters/adapters/cloud-run/*"'
