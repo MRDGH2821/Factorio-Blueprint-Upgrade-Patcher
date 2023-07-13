@@ -18,11 +18,11 @@
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
     "lint": "eslint --fix \"src/**/*.ts*\"",
+    "mega-lint": "npx mega-linter-runner",
     "preview": "qwik build preview && vite preview --open",
     "serve": "wrangler pages dev ./dist",
     "start": "vite --open --mode ssr",
-    "qwik": "qwik",
-    "mega-lint": "npx mega-linter-runner"
+    "qwik": "qwik"
   },
   "devDependencies": {
     "@builder.io/qwik": "^1.2.6",
