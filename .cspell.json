@@ -12,15 +12,10 @@
   "language": "en",
   "noConfigSearch": true,
   "words": [
-    "Factorio",
     "megalinter",
-    "mrdgh",
     "oxsecurity",
-    "pako",
-    "Parens",
     "qwik",
-    "specialchars",
-    "tagname"
+    "undici"
   ],
   "version": "0.2"
 }
