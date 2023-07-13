@@ -98,9 +98,7 @@ By default, the Cloudflare pages adaptor _does not_ include a `public/_routes.js
 
 ```json
 {
-  "include": [
-    "/*"
-  ],
+  "include": ["/*"],
   "exclude": [
     "/_headers",
     "/_redirects",

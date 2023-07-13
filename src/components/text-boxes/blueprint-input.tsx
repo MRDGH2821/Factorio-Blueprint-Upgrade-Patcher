@@ -1,7 +1,7 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import { base64ToBytes } from 'byte-base64';
 import { inflate } from 'pako';
-import { BlueprintInputStore } from '../ts-interfaces/blueprint';
+import type { BlueprintInputStore } from '../ts-interfaces/blueprint';
 import textBoxStyles from './text_box.css?inline';
 
 export function BlueprintDecrypt(bpCtx: BlueprintInputStore) {

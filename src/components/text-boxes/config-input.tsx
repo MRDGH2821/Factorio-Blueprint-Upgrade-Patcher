@@ -1,6 +1,6 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import { default as defaultConfig } from '../../../public/default-config.json';
-import { ConfigInputStore } from '../ts-interfaces/config';
+import type { ConfigInputStore } from '../ts-interfaces/config';
 import textBoxStyles from './text_box.css?inline';
 interface CFGprop {
   cfgStore: ConfigInputStore;

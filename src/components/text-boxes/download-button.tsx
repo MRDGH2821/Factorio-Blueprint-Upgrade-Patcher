@@ -2,8 +2,8 @@ import { component$ } from '@builder.io/qwik';
 import { bytesToBase64 } from 'byte-base64';
 import htmlFS from 'file-saver';
 import { deflate } from 'pako';
-import { BlueprintInputStore } from '../ts-interfaces/blueprint';
-import { BluePrintConfig, ConfigInputStore } from '../ts-interfaces/config';
+import type { BlueprintInputStore } from '../ts-interfaces/blueprint';
+import type { BluePrintConfig, ConfigInputStore } from '../ts-interfaces/config';
 
 interface btnProps {
   BPstore: BlueprintInputStore;
