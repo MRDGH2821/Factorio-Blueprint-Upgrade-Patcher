@@ -1,110 +1,72 @@
-# Qwik City App ⚡️
+# Factorio Blueprint Upgrade Patcher
 
-- [Qwik Docs](https://qwik.builder.io/)
-- [Discord](https://qwik.builder.io/chat)
-- [Qwik GitHub](https://github.com/BuilderIO/qwik)
-- [@QwikDev](https://twitter.com/QwikDev)
-- [Vite](https://vitejs.dev/)
+Plan your upgrades in config, Patch your blueprint by uploading in [site](https://factorio-blueprint-upgrade-planner.pages.dev/), Profit!
 
----
+Made using [Qwik](https://qwik.builder.io/), deployed on [Cloudflare Pages](https://pages.cloudflare.com/)
 
-## Project Structure
+## Config File
 
-This project is using Qwik with [QwikCity](https://qwik.builder.io/qwikcity/overview/). QwikCity is just an extra set of tools on top of Qwik to make it easier to build a full site, including directory-based routing, layouts, and more.
+The default config is located [here](./public/default-config.json)
+Pull requests are welcome to add more entities in the default config!
 
-Inside your project, you'll see the following directory structure:
+### Format
 
-```directory
-├── public/
-│   └── ...
-└── src/
-    ├── components/
-    │   └── ...
-    └── routes/
-        └── ...
-```
+The configuration should be in JSON format.
 
-- `src/routes`: Provides the directory-based routing, which can include a hierarchy of `layout.tsx` layout files, and an `index.tsx` file as the page. Additionally, `index.ts` files are endpoints. Please see the [routing docs](https://qwik.builder.io/qwikcity/routing/overview/) for more info.
+| Key      | Data Type | Description                                                                                                                |
+| -------- | --------- | -------------------------------------------------------------------------------------------------------------------------- |
+| version  | Number    | Config version. In future, configurations may have more options thus it is recommended to put version else it is optional. |
+| entities | Array     | Array of `entity` objects. Check below for Entity object format                                                            |
 
-- `src/components`: Recommended directory for components.
+Entity object format
 
-- `public`: Any static assets, like images, can be placed in the public directory. Please see the [Vite public directory](https://vitejs.dev/guide/assets.html#the-public-directory) for more info.
+| Key | Data Type | Description                                                                                                   |
+| --- | --------- | ------------------------------------------------------------------------------------------------------------- |
+| old | String    | Internal name of entity present in blueprint. This can also be a Regular expression (Do not put regex flags). |
+| new | String    | Internal name of new entity replacing old one                                                                 |
 
-## Add Integrations and deployment
+### Custom Config
 
-Use the `npm run qwik add` command to add additional integrations. Some examples of integrations includes: Cloudflare, Netlify or Express Server, and the [Static Site Generator (SSG)](https://qwik.builder.io/qwikcity/guides/static-site-generation/).
+Open Factorio's [Debug Mode](https://wiki.factorio.com/Debug_mode) & enable `show-debug-info-in-tooltips` which will enable you to see entity's internal name.
 
-```shell
-npm run qwik add # or `yarn qwik add`
-```
+Take a note of which entity you want to replace with which one.
 
-## Development
+For example, let's replace pipes. Regular pipes have internal name: `pipe`
 
-Development mode uses [Vite's development server](https://vitejs.dev/). The `dev` command will server-side render (SSR) the output during development.
+Now to replace them with Space pipes which have internal name: `se-space-pipe`
 
-```shell
-npm start # or `yarn start`
-```
-
-> Note: during dev mode, Vite may request a significant number of `.js` files. This does not represent a Qwik production build.
-
-## Preview
-
-The preview command will create a production build of the client modules, a production build of `src/entry.preview.tsx`, and run a local server. The preview server is only for convenience to preview a production build locally and should not be used as a production server.
-
-```shell
-npm run preview # or `yarn preview`
-```
-
-## Production
-
-The production build will generate client and server modules by running both client and server build commands. The build command will use Typescript to run a type check on the source code.
-
-```shell
-npm run build # or `yarn build`
-```
-
-## Cloudflare Pages
-
-Cloudflare's [wrangler](https://github.com/cloudflare/wrangler) CLI can be used to preview a production build locally. To start a local server, run:
-
-```bash
-npm run serve
-```
-
-Then visit [http://localhost:8787/](http://localhost:8787/)
-
-### Deployments
-
-[Cloudflare Pages](https://pages.cloudflare.com/) are deployable through their [Git provider integrations](https://developers.cloudflare.com/pages/platform/git-integration/).
-
-If you don't already have an account, then [create a Cloudflare account here](https://dash.cloudflare.com/sign-up/pages). Next go to your dashboard and follow the [Cloudflare Pages deployment guide](https://developers.cloudflare.com/pages/framework-guides/deploy-anything/).
-
-Within the projects "Settings" for "Build and deployments", the "Build command" should be `npm run build`, and the "Build output directory" should be set to `dist`.
-
-### Function Invocation Routes
-
-Cloudflare Page's [function-invocation-routes config](https://developers.cloudflare.com/pages/platform/functions/routing/#functions-invocation-routes) can be used to include, or exclude, certain paths to be used by the worker functions. Having a `_routes.json` file gives developers more granular control over when your Function is invoked.
-This is useful to determine if a page response should be Server-Side Rendered (SSR) or if the response should use a static-site generated (SSG) `index.html` file.
-
-By default, the Cloudflare pages adaptor _does not_ include a `public/_routes.json` config, but rather it is auto-generated from the build by the Cloudflare adaptor. An example of an auto-generate `dist/_routes.json` would be:
+Your resulting config should be in JSON. So our example config would look like this:
 
 ```json
 {
-  "include": ["/*"],
-  "exclude": [
-    "/_headers",
-    "/_redirects",
-    "/build/*",
-    "/favicon.ico",
-    "/manifest.json",
-    "/service-worker.js",
-    "/about"
-  ],
-  "version": 1
+  "version": 1,
+  "entities": [
+    {
+      "old": "pipe",
+      "new": "se-space-pipe"
+    }
+  ]
 }
 ```
 
-In the above example, it's saying _all_ pages should be SSR'd. However, the root static files such as `/favicon.ico` and any static assets in `/build/*` should be excluded from the Functions, and instead treated as a static file.
+Replacing belts with Space versions by using regex:
 
-In most cases the generated `dist/_routes.json` file is ideal. However, if you need more granular control over each path, you can instead provide you're own `public/_routes.json` file. When the project provides its own `public/_routes.json` file, then the Cloudflare adaptor will not auto-generate the routes config and instead use the committed one within the `public` directory.
+```json
+{
+  "version": 1,
+  "entities": [
+    {
+      "old": "(?:[a-z]+-)?transport-belt",
+      "new": "se-space-transport-belt"
+    },
+    {
+      "old": "(?:[a-z]+-)?underground-belt",
+      "new": "se-space-underground-belt"
+    },
+    {
+      "old": "(?:[a-z]+-)?splitter",
+      "new": "se-space-splitter"
+    }
+  ]
+}
+```
