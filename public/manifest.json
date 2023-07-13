@@ -1,9 +1,9 @@
 {
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
-  "name": "Factorio-Blueprint-Upgrade-Planner",
-  "short_name": "Blueprint Upgrade Planner",
+  "name": "qwik-project-name",
+  "short_name": "Welcome to Qwik",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#fff",
-  "description": "Replace/Upgrade entities in your Factorio blueprint with ease!"
+  "description": "A Qwik project app."
 }
