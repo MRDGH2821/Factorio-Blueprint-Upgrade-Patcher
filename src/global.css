@@ -61,7 +61,14 @@ li::marker {
   color: var(--qwik-light-blue);
 }
 
-a,
+a {
+  color: var(--qwik-dark-blue);
+}
+
+footer a {
+  text-decoration: none;
+}
+
 a:visited {
   color: var(--qwik-dark-blue);
 }
@@ -96,10 +103,6 @@ footer {
   padding: 15px;
   text-align: center;
   font-size: 0.8em;
-}
-
-footer a {
-  text-decoration: none;
 }
 
 footer a:hover {
