@@ -13,4 +13,5 @@
     "**/*.svg"
   ],
   "gitignore": true,
+  "ignorePattern": ["Key.*data.*type.*description"]
 }
