@@ -14,13 +14,22 @@
   "language": "en",
   "noConfigSearch": true,
   "words": [
+    "DEVSKIM",
+    "Factorio",
+    "maxage",
     "megalinter",
     "mrdgh",
     "oxsecurity",
     "packagejson",
+    "pako",
     "qwik",
+    "rror",
+    "stefanzweifel",
+    "stylelint",
     "todolist",
-    "undici"
+    "undici",
+    "venv",
+    "vite"
   ],
   "version": "0.2"
 }
