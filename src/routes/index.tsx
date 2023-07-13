@@ -94,6 +94,7 @@ export default component$(() => {
         <strong>Entity object format</strong>
       </p>
       <table class="commands">
+        {/* jscpd:ignore-start */}
         <thead>
           <tr>
             <th>Key</th>
@@ -101,6 +102,7 @@ export default component$(() => {
             <th>Description</th>
           </tr>
         </thead>
+        {/* jscpd:ignore-start */}
         <tbody>
           <tr>
             <td>old</td>
