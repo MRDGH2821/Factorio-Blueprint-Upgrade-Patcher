@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
-  "name": "Factorio-Blueprint-Upgrade-Planner",
-  "short_name": "Blueprint Upgrade Planner",
+  "name": "Factorio-Blueprint-Upgrade-Patcher",
+  "short_name": "Blueprint Upgrade Patcher",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#fff",
