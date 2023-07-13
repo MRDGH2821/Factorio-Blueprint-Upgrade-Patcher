@@ -7,8 +7,10 @@
     ".vscode",
     "megalinter",
     "package-lock.json",
-    "report"
+    "report",
+    "*ignore*"
   ],
+  "useGitignore": true,
   "language": "en",
   "noConfigSearch": true,
   "words": [
