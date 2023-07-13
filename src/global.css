@@ -15,8 +15,13 @@
 
 body {
   background-color: #fafafa;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  padding: 20px 20px 40px 20px;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  padding: 20px 20px 40px;
 }
 
 main {
@@ -24,13 +29,13 @@ main {
   margin: 0 auto;
   background-color: white;
   border-radius: 5px;
-  box-shadow: 0px 0px 130px -50px var(--qwik-light-purple);
+  box-shadow: 0 0 130px -50px var(--qwik-light-purple);
   overflow: hidden;
 }
 
 h1,
 h2 {
-  margin: 0 0 5px 0;
+  margin: 0 0 5px;
 }
 
 .lightning {
@@ -44,7 +49,7 @@ section {
 
 ul {
   list-style-type: square;
-  margin: 5px 0 30px 0;
+  margin: 5px 0 30px;
   padding-left: 25px;
 }
 
@@ -66,7 +71,7 @@ a:hover {
 }
 
 table.commands {
-  margin: 0 0 30px 0;
+  margin: 0 0 30px;
 }
 
 .commands td {
@@ -79,9 +84,9 @@ table.commands {
 }
 
 code {
-  font-family: Menlo, Monaco, Courier New, monospace;
+  font-family: Menlo, Monaco, 'Courier New', monospace;
   font-size: 0.9em;
-  background-color: rgb(224, 224, 224);
+  background-color: rgb(224 224 224);
   padding: 2px 4px;
   border-radius: 3px;
   border-bottom: 2px solid #bfbfbf;
