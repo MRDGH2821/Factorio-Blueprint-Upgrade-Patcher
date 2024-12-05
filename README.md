@@ -1,5 +1,8 @@
 # Factorio Blueprint Upgrade Patcher
 
+** UPDATE: [2024-12-05] This site is taken down as this has become redundant. You may clone the repo & host the site locally. **
+
+
 Plan your upgrades in config, Patch your blueprint by uploading in [site](https://factorio-blueprint-upgrade-patcher.pages.dev/), Profit!
 
 Made using [Qwik](https://qwik.builder.io/), deployed on [Cloudflare Pages](https://pages.cloudflare.com/)
